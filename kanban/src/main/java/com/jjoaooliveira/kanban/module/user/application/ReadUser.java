@@ -1,6 +1,5 @@
 package com.jjoaooliveira.kanban.module.user.application;
 
-import com.jjoaooliveira.kanban.module.user.application.exception.UserApplicationException;
 import com.jjoaooliveira.kanban.module.user.domain.User;
 
 public class ReadUser {
@@ -11,8 +10,7 @@ public class ReadUser {
     }
 
     public UserResponse doRead(UserRequest request) {
-        User user = dataGateway.readUserByEmail(request.email())
-            .orElseThrow(() -> new UserApplicationException("User not found"));
+        User user = dataGateway.readUserByEmail(request.email());
 
         return new UserResponse(user.getId(), user.getName(), user.getEmail());
     }
