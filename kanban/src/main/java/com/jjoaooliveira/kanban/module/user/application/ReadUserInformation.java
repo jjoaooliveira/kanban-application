@@ -2,10 +2,10 @@ package com.jjoaooliveira.kanban.module.user.application;
 
 import com.jjoaooliveira.kanban.module.user.domain.User;
 
-public class ReadUser {
+public class ReadUserInformation {
     private UserDataGatewayInterface dataGateway;
 
-    public ReadUser(UserDataGatewayInterface dataGateway) {
+    public ReadUserInformation(UserDataGatewayInterface dataGateway) {
         this.dataGateway = dataGateway;
     }
 

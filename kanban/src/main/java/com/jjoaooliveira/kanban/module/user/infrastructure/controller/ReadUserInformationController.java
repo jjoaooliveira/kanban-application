@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jjoaooliveira.kanban.module.user.application.ReadUser;
+import com.jjoaooliveira.kanban.module.user.application.ReadUserInformation;
 import com.jjoaooliveira.kanban.module.user.application.UserRequest;
 import com.jjoaooliveira.kanban.module.user.application.UserResponse;
 
 @RestController
 @RequestMapping("/user")
-public class ReadUserController {
-    private final ReadUser readUserInteractor;
+public class ReadUserInformationController {
+    private final ReadUserInformation readUserInteractor;
 
-    public ReadUserController(ReadUser readUserInteractor) {
+    public ReadUserInformationController(ReadUserInformation readUserInteractor) {
         this.readUserInteractor = readUserInteractor;
     }
 
