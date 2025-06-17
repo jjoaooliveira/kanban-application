@@ -1,8 +1,11 @@
-package com.jjoaooliveira.kanban.module.task.application;
+package com.jjoaooliveira.kanban.module.task.application.member;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.jjoaooliveira.kanban.module.task.application.TaskDataGateway;
+import com.jjoaooliveira.kanban.module.task.application.TaskRequest;
+import com.jjoaooliveira.kanban.module.task.application.TaskResponse;
 import com.jjoaooliveira.kanban.module.task.domain.Task;
 
 public class ReadTaskByKanban {
