@@ -1,14 +1,15 @@
 package com.jjoaooliveira.kanban.module.user.infrastructure.controller;
 
-import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.jjoaooliveira.kanban.module.user.application.CreateUser;
 import com.jjoaooliveira.kanban.module.user.application.UserRequest;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+@Controller
 @RequestMapping("/user")
 public class CreateUserController {
     private final CreateUser createUserInteractor;
@@ -16,11 +17,15 @@ public class CreateUserController {
     public CreateUserController(CreateUser createUserInteractor) {
         this.createUserInteractor = createUserInteractor;
     }
+
+    @GetMapping
+    public String getPage() {
+        return "signup";
+    }
     
     @PostMapping
-    public HttpStatus createUser(UserRequest request) {
+    public String createUser(@RequestBody UserRequest request) {
         createUserInteractor.doCreate(request);
-        
-        return HttpStatus.OK;
+        return "redirect:/login";
     }
 }

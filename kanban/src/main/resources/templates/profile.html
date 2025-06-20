@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .user-info-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .user-info-container h2 {
+            text-align: center;
+        }
+        .info-group {
+            margin-bottom: 15px;
+        }
+        .info-label {
+            font-weight: bold;
+        }
+        .info-value {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-info-container">
+        <h2>Informações do Usuário</h2>
+
+        <div class="info-group">
+            <span class="info-label">Nome:</span>
+            <span class="info-value" th:text="${user.name}">Nome do Usuário</span>
+        </div>
+
+        <div class="info-group">
+            <span class="info-label">E-mail:</span>
+            <span class="info-value" th:text="${user.email}">email@exemplo.com</span>
+        </div>
+
+        <div class="info-group">
+            <span class="info-label">Idade:</span>
+            <span class="info-value">30</span>
+        </div>
+
+        <div class="info-group">
+            <span class="info-label">Telefone:</span>
+            <span class="info-value">(00) 00000-0000</span>
+        </div>
+
+        <div class="info-group">
+            <span class="info-label">Endereço:</span>
+            <span class="info-value">Rua Exemplo, 123</span>
+        </div>
+    </div>
+</body>
+</html>

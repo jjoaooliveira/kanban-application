@@ -1,27 +1,25 @@
 package com.jjoaooliveira.kanban.module.user.infrastructure.controller;
 
-import org.springframework.hateoas.EntityModel;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.jjoaooliveira.kanban.module.user.application.ReadUserInformation;
-import com.jjoaooliveira.kanban.module.user.application.UserRequest;
 import com.jjoaooliveira.kanban.module.user.application.UserResponse;
 
-@RestController
-@RequestMapping("/user")
+@Controller
+@RequestMapping("/profile")
 public class ReadUserInformationController {
-    private final ReadUserInformation readUserInteractor;
-
-    public ReadUserInformationController(ReadUserInformation readUserInteractor) {
-        this.readUserInteractor = readUserInteractor;
-    }
-
+    
     @GetMapping
-    public EntityModel<UserResponse> readUser(UserRequest request) {
-        UserResponse response = readUserInteractor.doRead(request);
-        
-        return EntityModel.of(response);
+    public String readUser(Authentication authentication, Model model) {
+        User userAuthenticated = (User) authentication.getPrincipal();
+        UserResponse response = new UserResponse(
+            null, userAuthenticated.getUsername(), "email@email.com");
+        model.addAttribute("user", response);
+
+        return "profile";
     }
 }
