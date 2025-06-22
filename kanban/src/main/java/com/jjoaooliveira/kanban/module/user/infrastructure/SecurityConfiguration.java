@@ -22,6 +22,7 @@ public class SecurityConfiguration {
         http
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/").permitAll()
+                .requestMatchers("/signup").permitAll()
                 .anyRequest().authenticated()
             ).formLogin(Customizer.withDefaults());
             

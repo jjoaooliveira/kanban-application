@@ -10,7 +10,7 @@ import com.jjoaooliveira.kanban.module.user.application.UserRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/signup")
 public class CreateUserController {
     private final CreateUser createUserInteractor;
 
