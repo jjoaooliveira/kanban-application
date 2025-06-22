@@ -1,15 +1,15 @@
 package com.jjoaooliveira.kanban.module.task.application.admin;
 
-import com.jjoaooliveira.kanban.module.task.application.TaskDataGateway;
+import com.jjoaooliveira.kanban.module.task.application.TaskDataGatewayInterface;
 import com.jjoaooliveira.kanban.module.task.application.TaskRequest;
 import com.jjoaooliveira.kanban.module.task.domain.Description;
 import com.jjoaooliveira.kanban.module.task.domain.Task;
 import com.jjoaooliveira.kanban.module.task.domain.Title;
 
 public class DeleteTask {
-    private final TaskDataGateway dataGateway;
+    private final TaskDataGatewayInterface dataGateway;
 
-    public DeleteTask(TaskDataGateway dataGateway) {
+    public DeleteTask(TaskDataGatewayInterface dataGateway) {
         this.dataGateway = dataGateway;
     }
 

@@ -4,7 +4,7 @@ import java.util.Set;
 
 import com.jjoaooliveira.kanban.module.task.domain.Task;
 
-public interface TaskDataGateway {
+public interface TaskDataGatewayInterface {
     Task saveTask(Task task);
     Task updateTask(Task task);
     void deleteTask(Task task);
